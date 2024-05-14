@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Fine Finder - CirGrad</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+            margin: 10;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .calculator {
+            max-width: 450px;
+            margin: 30px auto 50px;
+			padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .center-text {
+            text-align: center;
+            font-size: 14px;
+            color: grey;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #4CAF50;
+        }
+
+        button,
+        a.button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover,
+        a.button:hover {
+            background-color: #388E3C;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #388E3C;
+        }
+
+        .fine-note {
+            font-size: 12px;
+            color: #FF0000;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .calculator {
+                padding: 20px;
+                margin: 50px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="center-text">University Learning Resource Center ©2024</div>
+        <h1>LiFF {Cir/Fic}</h1>
+        <div class="input-group">
+            <label for="patron-type">Patron Type</label>
+            <select id="patron-type">
+                <option value="undergraduate">Undergraduate Student</option>
+                <option value="graduate">Graduate Student</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="book-type">Book Type/Location</label>
+            <select id="book-type">
+                <option value="circulation">Circulation</option>
+                <option value="fiction">Fiction</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="date-borrowed">Date Borrowed</label>
+            <input type="date" id="date-borrowed">
+        </div>
+        <div class="input-group">
+            <label for="date-returned">Date Returned</label>
+            <input type="date" id="date-returned">
+        </div>
+        <div class="input-group">
+            <label for="holidays">No. of Sundays & Holidays</label>
+            <input type="number" id="holidays" min="0" placeholder="Enter number of holidays">
+        </div>
+        <div class="input-group">
+            <label for="num-books">No. of Books Borrowed</label>
+            <select id="num-books">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <button onclick="calculateFine()">Calculate Fine</button>
+        <button onclick="resetCalculator()">Reset</button>
+        <button type="button" onclick="window.location.href = 'index.html'" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Home</button>
+
+        <div id="result"></div>
+
+        <div class="fine-note">
+            Note: For calculating fines, exclude Sundays and Holidays after the due date.
+        </div>
+    </div>
+
+    <script>
+        function calculateFine() {
+            const patronType = document.getElementById("patron-type").value;
+            const bookType = document.getElementById("book-type").value;
+            const dateBorrowed = new Date(document.getElementById("date-borrowed").value);
+            const dateReturned = new Date(document.getElementById("date-returned").value);
+            const holidays = parseInt(document.getElementById("holidays").value) || 0;
+            const numBooks = parseInt(document.getElementById("num-books").value);
+
+            if (isNaN(dateBorrowed.getTime()) || isNaN(dateReturned.getTime())) {
+                document.getElementById("result").innerText = "Invalid dates. Please check your input.";
+                return;
+            }
+
+            const oneDay = 24 * 60 * 60 * 1000;
+            const daysBorrowed = Math.round((dateReturned - dateBorrowed) / oneDay) - holidays;
+
+            let maxDays;
+            let finePerDay;
+
+            if (patronType === "undergraduate") {
+                if (bookType === "circulation") {
+                    maxDays = 3;
+                    finePerDay = 1.00;
+                } else if (bookType === "fiction") {
+                    maxDays = 7;
+                    finePerDay = 0.50;
+                }
+            } else if (patronType === "graduate") {
+                if (bookType === "circulation") {
+                    maxDays = 7;
+                    finePerDay = 1.00;
+                } else if (bookType === "fiction") {
+                    maxDays = 7;
+                    finePerDay = 0.50;
+                }
+            }
+
+            const overdueDays = daysBorrowed - maxDays;
+            const fine = (overdueDays > 0 ? overdueDays * finePerDay : 0) * numBooks;
+
+            let resultMessage = `No. of Days Borrowed: ${daysBorrowed}`;
+            resultMessage += `\nNo. of Overdue Days: ${overdueDays > 0 ? overdueDays : 0}`;
+            resultMessage += `\nOverdue Fine: ${fine > 0 ? fine.toFixed(2) : "No fine"}`;
+
+            document.getElementById("result").innerText = resultMessage;
+        }
+
+        function resetCalculator() {
+            document.getElementById("patron-type").selectedIndex = 0;
+            document.getElementById("book-type").selectedIndex = 0;
+            document.getElementById("date-borrowed").value = '';
+            document.getElementById("date-returned").value = '';
+            document.getElementById("holidays").value = '';
+            document.getElementById("num-books").selectedIndex = 0;
+            document.getElementById("result").innerText = '';
+        }
+    </script>
+</body>
+</html>

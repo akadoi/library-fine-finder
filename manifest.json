@@ -1,0 +1,16 @@
+{
+  "name": "ULRC LiFF",
+  "short_name": "LiFF",
+  "description": "Library FineFinder (LiFF) by akadoi",
+  "icons": [
+    {
+      "src": "calculator.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff"
+}

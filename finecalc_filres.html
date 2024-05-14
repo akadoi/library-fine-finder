@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Fine Finder - FilRes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .center-text {
+            text-align: center;
+            font-size: 14px;
+            color: grey;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button, a.button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover, a.button:hover {
+            background-color: #0056b3;
+        }
+
+        a.button {
+            background-color: #4CAF50; /* Green background color */
+            height: 17px; /* Match height with other buttons */
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: none; /* Initially hidden */
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center-text">University Learning Resource Center ©2024</div>
+        <h1>LiFF {Fil/Res}</h1>
+        <form id="fine-calculator">
+            <label for="patron-type">Patron Type:</label>
+            <select id="patron-type" required>
+                <option value="" disabled selected>Select Patron Type</option>
+                <option value="Undergraduate">Undergraduate Student</option>
+                <option value="Graduate">Graduate Student</option>
+            </select>
+            
+            <label for="book-location">Book Type/Location:</label>
+            <select id="book-location" required>
+                <option value="" disabled selected>Select Book Type/Location</option>
+                <option value="Filipiniana">Filipiniana</option>
+                <option value="Reserved">Reserved</option>
+            </select>
+            
+            <label for="borrowed">Date and Time Borrowed:</label>
+            <input type="datetime-local" id="borrowed" required>
+            
+            <label for="returned">Date and Time Returned:</label>
+            <input type="datetime-local" id="returned" required>
+            
+            <label for="num-books">No. of Books Borrowed:</label>
+            <select id="num-books" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+            <div class="button-container">
+                <button type="button" onclick="calculateFine()">Calculate Fine</button>
+                <button type="reset" onclick="resetFormAndResults()">Reset</button>
+				<button type="button" onclick="window.location.href = 'index.html'" style="background-color: #4CAF50; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Home</button>
+
+            </div>
+        </form>
+        
+        <div id="results">
+            <h3>Results</h3>
+            <p>Patron Type: <span id="patron-type-result"></span></p>
+            <p>Book Type/Location: <span id="book-location-result"></span></p>
+            <p>Total Hours Borrowed: <span id="total-hours"></span></p>
+            <p>Overdue Time: <span id="overdue-time"></span></p>
+            <p>Number of Books Borrowed: <span id="num-books-result"></span></p> <!-- New entry for books borrowed -->
+            <p>Total Fine: <span id="total-fine"></span></p>
+        </div>
+    </div>
+
+
+    <script>
+        function calculateFine() {
+            const patronType = document.getElementById("patron-type").value;
+            const bookLocation = document.getElementById("book-location").value;
+            const numBooks = parseInt(document.getElementById("num-books").value); // Get the number of books borrowed
+
+            const fineFirstHour = 1.50; // Fine for the first overdue hour
+            const finePerSucceedingHour = 0.50; // Fine for each additional hour
+
+            let maxHours = 24; // Default max time in hours
+
+            if (patronType === "Graduate") {
+                if (bookLocation === "Filipiniana" || "Reserved") {
+                    maxHours = 168; // 7 days
+                }
+            }
+
+            const borrowed = new Date(document.getElementById("borrowed").value);
+            const returned = new Date(document.getElementById("returned").value);
+
+            if (isNaN(borrowed.getTime()) || isNaN(returned.getTime())) {
+                alert("Invalid date/time. Please check your inputs.");
+                return;
+            }
+
+            const totalMilliseconds = returned - borrowed;
+
+            const totalHoursDecimal = totalMilliseconds / (1000 * 60 * 60);
+            const totalHoursFull = Math.floor(totalHoursDecimal);
+            const totalMinutes = Math.round((totalHoursDecimal - totalHoursFull) * 60);
+
+            const overdueMilliseconds = totalMilliseconds - (maxHours * 60 * 60 * 1000);
+            const overdueHoursDecimal = overdueMilliseconds > 0 ? (overdueMilliseconds / (1000 * 60 * 60)) : 0;
+            const overdueHoursFull = Math.floor(overdueHoursDecimal);
+            const overdueMinutes = Math.round((overdueHoursDecimal - overdueHoursFull) * 60);
+
+            let totalFine = 0;
+
+            // Apply fine logic, including first-hour fine and additional fines for each extra hour
+            if (overdueMilliseconds > 0) {
+                totalFine = fineFirstHour; // Fine for the first overdue hour
+                
+                const additionalFineHours = overdueHoursFull + (overdueMinutes > 0 ? 1 : 0) - 1;
+                if (additionalFineHours > 0) {
+                    totalFine += finePerSucceedingHour * additionalFineHours; // Additional fine for each subsequent hour
+                }
+            }
+
+            totalFine *= numBooks; // Fine multiplied by the number of books borrowed
+
+            // Display results in the results section
+            document.getElementById("patron-type-result").innerText = patronType;
+            document.getElementById("book-location-result").innerText = bookLocation;
+            document.getElementById("total-hours").innerText = `${totalHoursFull}:${('0' + totalMinutes).slice(-2)}`; // Display hh:mm
+            document.getElementById("overdue-time").innerText = `${overdueHoursFull}:${('0' + overdueMinutes).slice(-2)}`; 
+            document.getElementById("num-books-result").innerText = numBooks; // Display the number of books borrowed
+            document.getElementById("total-fine").innerText = totalFine.toFixed(2); // Display total fine
+
+            document.getElementById("results").style.display = "block"; // Show results section
+        }
+
+        function resetFormAndResults() {
+            document.getElementById("fine-calculator").reset(); // Reset the form
+            document.getElementById("results").style.display = "none"; // Hide results section
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ULRC LiFF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+	
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the content vertically and horizontally */
+            background: linear-gradient(rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.8)), 
+                      url('ulrc.jpg') no-repeat center center; /* Gray overlay with background image */
+            background-size: cover; /* Scale the image to cover the entire background */
+        }
+
+        .outer-container {
+            text-align: center; /* Center the welcome text */
+            padding-bottom: 10px; /* Space between welcome text and container */
+        }
+
+        .welcome-text {
+            color: White; /* White text color */
+            font-size: 1em; /* Smaller font size for the welcome text */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent white box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Drop shadow */
+            padding: 35px; /* Padding inside the box */
+            max-width: 500px; /* Limit the width */
+            text-align: center; /* Center content inside the container */
+        }
+
+        h1 {
+            color: #333; /* Dark text color */
+            font-size: 1.8em; /* Larger font size for the main title */
+            margin-bottom: 20px; /* Space below the main title */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 20px; /* Space between buttons */
+        }
+
+        a.button {
+            text-decoration: none; /* No underline */
+            padding: 15px 30px; /* Padding for the buttons */
+            font-size: 1em; /* Standard font size */
+            color: white; /* White text */
+            border-radius: 5px; /* Rounded corners */
+            transition: background 0.3s; /* Transition effect for hover */
+            border: none;
+            cursor: pointer; /* Cursor changes on hover */
+        }
+
+        .blue-button {
+            background: #007bff; /* Blue button */
+        }
+
+        .blue-button:hover {
+            background: #0056b3; /* Darken on hover */
+        }
+
+        .green-button {
+            background: #28a745; /* Green button */
+        }
+
+        .green-button:hover {
+            background: #218838; /* Darken on hover */
+        }
+
+        .footer {
+            position: fixed; /* Always stay at the bottom-right corner */
+            bottom: 10px; /* 10px from the bottom */
+            right: 10px; /* 10px from the right */
+            font-size: 12px; /* Smaller font size */
+            color: White; /* White text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="welcome-text">Welcome to USeP-University Learning Resource Center!</div> <!-- Small white title -->
+        
+        <div class="container"> <!-- White box with drop shadow -->
+            <img src="calculator.png" alt="Library Logo" width="100" height="100"> <!-- Image above the title -->
+            <h1>Library FineFinder (LiFF)</h1> <!-- Main title -->
+            
+            <div class="button-container">
+                <a href="finecalc_filres.html" class="button blue-button">Filipiniana & Reserve</a> <!-- Blue button with anchor -->
+                <a href="finecalc_cirgrad.html" class="button green-button">Circulation & Fiction</a> <!-- Green button with anchor -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">LiFF by akadoi ©2024.</div> <!-- Small text at the lower right -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => console.log('Service Worker registered'))
+                    .catch(error => console.error('Service Worker registration failed:', error));
+            });
+        }
+    </script>
+</body>
+</html>
