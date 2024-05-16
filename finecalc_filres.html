@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Library Fine Finder - FilRes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="calculator.png" type="image/icon type">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,6 +86,13 @@
             display: none; /* Initially hidden */
         }
 
+		.footer {
+            position: fixed; /* Always stay at the bottom-right corner */
+            bottom: 10px; /* 10px from the bottom */
+            right: 10px; /* 10px from the right */
+            font-size: 12px; /* Smaller font size */
+		}
+
         /* Responsive Design */
         @media only screen and (max-width: 600px) {
             .container {
@@ -151,6 +159,7 @@
         </div>
     </div>
 
+	<div class="footer"><a href="finecalc_policy.html">See Policy on Fines and Penalties</a></div> <!-- Small text at the lower right -->
 
     <script>
         function calculateFine() {
@@ -217,6 +226,15 @@
             document.getElementById("fine-calculator").reset(); // Reset the form
             document.getElementById("results").style.display = "none"; // Hide results section
         }
-    </script>
+    
+			// Add event listener to form to listen for Enter key press
+        document.getElementById("fine-calculator").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent default form submission
+                calculateFine(); // Calculate fine
+            }
+        });
+	
+		</script>
 </body>
 </html>
