@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Fine Finder - CirGrad</title>
+	<link rel="icon" href="calculator.png" type="image/icon type">
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -16,7 +17,7 @@
         .calculator {
             max-width: 450px;
             margin: 30px auto 50px;
-			padding: 50px;
+            padding: 50px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -98,7 +99,15 @@
             color: #FF0000;
             text-align: left;
             margin-top: 20px;
+			text-align: justify;
         }
+
+		.footer {
+            position: fixed; /* Always stay at the bottom-right corner */
+            bottom: 10px; /* 10px from the bottom */
+            right: 10px; /* 10px from the right */
+            font-size: 12px; /* Smaller font size */
+		}
 
         /* Responsive Styles */
         @media only screen and (max-width: 600px) {
@@ -113,58 +122,64 @@
     <div class="calculator">
         <div class="center-text">University Learning Resource Center ©2024</div>
         <h1>LiFF {Cir/Fic}</h1>
-        <div class="input-group">
-            <label for="patron-type">Patron Type</label>
-            <select id="patron-type">
-                <option value="undergraduate">Undergraduate Student</option>
-                <option value="graduate">Graduate Student</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <label for="book-type">Book Type/Location</label>
-            <select id="book-type">
-                <option value="circulation">Circulation</option>
-                <option value="fiction">Fiction</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <label for="date-borrowed">Date Borrowed</label>
-            <input type="date" id="date-borrowed">
-        </div>
-        <div class="input-group">
-            <label for="date-returned">Date Returned</label>
-            <input type="date" id="date-returned">
-        </div>
-        <div class="input-group">
-            <label for="holidays">No. of Sundays & Holidays</label>
-            <input type="number" id="holidays" min="0" placeholder="Enter number of holidays">
-        </div>
-        <div class="input-group">
-            <label for="num-books">No. of Books Borrowed</label>
-            <select id="num-books">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </div>
+        <form id="fine-form">
+            <div class="input-group">
+                <label for="patron-type">Patron Type</label>
+                <select id="patron-type">
+					<option value="" disabled selected>Select Patron Type</option>
+                    <option value="undergraduate">Undergraduate Student</option>
+                    <option value="graduate">Graduate Student</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="book-type">Book Type/Location</label>
+                <select id="book-type">
+                    <option value="" disabled selected>Select Book Type/Location</option>
+					<option value="circulation">Circulation</option>
+                    <option value="fiction">Fiction</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="date-borrowed">Date Borrowed</label>
+                <input type="date" id="date-borrowed">
+            </div>
+            <div class="input-group">
+                <label for="date-returned">Date Returned</label>
+                <input type="date" id="date-returned">
+            </div>
+            <div class="input-group">
+                <label for="holidays">No. of Sundays & Holidays</label>
+                <input type="number" id="holidays" min="0" placeholder="Enter number of holidays">
+            </div>
+            <div class="input-group">
+                <label for="num-books">No. of Books Borrowed</label>
+                <select id="num-books">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
 
-        <button onclick="calculateFine()">Calculate Fine</button>
-        <button onclick="resetCalculator()">Reset</button>
-        <button type="button" onclick="window.location.href = 'index.html'" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Home</button>
+            <button type="button" onclick="calculateFine()">Calculate Fine</button>
+            <button type="button" onclick="resetCalculator()">Reset</button>
+            <button type="button" onclick="window.location.href = 'index.html'" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Home</button>
 
-        <div id="result"></div>
+            <div id="result"></div>
 
-        <div class="fine-note">
-            Note: For calculating fines, exclude Sundays and Holidays after the due date.
-        </div>
+            <div class="fine-note">
+                Note: For calculating fines, exclude Sundays and Holidays covered after the Due Date. In the event that the due date falls on a Sunday, the due date is automatically adjusted to the succeeding day (Monday), thus exempting that Sunday covered in the borrowing period from the calculation of fines.
+            </div>
+        </form>
     </div>
+
+	<div class="footer"><a href="finecalc_policy.html">See Policy on Fines and Penalties</a></div> <!-- Small text at the lower right -->
 
     <script>
         function calculateFine() {
@@ -185,44 +200,48 @@
 
             let maxDays;
             let finePerDay;
+			
+			if (patronType === "undergraduate") {
+    if (bookType === "circulation") {
+        maxDays = 3;
+        finePerDay = 1.00;
+    } else if (bookType === "fiction") {
+        maxDays = 7;
+        finePerDay = 0.50;
+    }
+} else if (patronType === "graduate") {
+    if (bookType === "circulation") {
+        maxDays = 7;
+        finePerDay = 1.00;
+    } else if (bookType === "fiction") {
+        maxDays = 7;
+        finePerDay = 0.50;
+    }
+}
 
-            if (patronType === "undergraduate") {
-                if (bookType === "circulation") {
-                    maxDays = 3;
-                    finePerDay = 1.00;
-                } else if (bookType === "fiction") {
-                    maxDays = 7;
-                    finePerDay = 0.50;
-                }
-            } else if (patronType === "graduate") {
-                if (bookType === "circulation") {
-                    maxDays = 7;
-                    finePerDay = 1.00;
-                } else if (bookType === "fiction") {
-                    maxDays = 7;
-                    finePerDay = 0.50;
-                }
-            }
+const overdueDays = daysBorrowed - maxDays;
+const fine = (overdueDays > 0 ? overdueDays * finePerDay : 0) * numBooks;
 
-            const overdueDays = daysBorrowed - maxDays;
-            const fine = (overdueDays > 0 ? overdueDays * finePerDay : 0) * numBooks;
+let resultMessage = `Patron Type: ${patronType}\n`;
+resultMessage += `Book Type/Location: ${bookType}\n`;
+resultMessage += `No. of Days Borrowed: ${daysBorrowed}\n`;
+resultMessage += `No. of Overdue Days: ${overdueDays > 0 ? overdueDays : 0}\n`;
+resultMessage += `Overdue Fine: ${fine > 0 ? fine.toFixed(2) : "No fine"}`;
 
-            let resultMessage = `No. of Days Borrowed: ${daysBorrowed}`;
-            resultMessage += `\nNo. of Overdue Days: ${overdueDays > 0 ? overdueDays : 0}`;
-            resultMessage += `\nOverdue Fine: ${fine > 0 ? fine.toFixed(2) : "No fine"}`;
+document.getElementById("result").innerText = resultMessage;
+}
 
-            document.getElementById("result").innerText = resultMessage;
-        }
+function resetCalculator() {
+document.getElementById("fine-form").reset();
+document.getElementById("result").innerText = '';
+}
 
-        function resetCalculator() {
-            document.getElementById("patron-type").selectedIndex = 0;
-            document.getElementById("book-type").selectedIndex = 0;
-            document.getElementById("date-borrowed").value = '';
-            document.getElementById("date-returned").value = '';
-            document.getElementById("holidays").value = '';
-            document.getElementById("num-books").selectedIndex = 0;
-            document.getElementById("result").innerText = '';
-        }
-    </script>
+document.getElementById("fine-form").addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+    event.preventDefault();
+    calculateFine();
+}
+});
+</script>
 </body>
 </html>
