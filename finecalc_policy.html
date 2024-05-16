@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fines Policy</title>
   <link rel="icon" href="calculator.png" type="image/icon type">
   <style>
@@ -12,7 +13,7 @@
     
     body {
       font-family: 'Open Sans';
-      font-size: 0.5em;
+      font-size: 1.5em;
     }
     
     .content {
@@ -22,29 +23,30 @@
       padding: 0 0px 0 0;
     }
     
-    .centerplease {
-      margin: 0 auto;
-      font-size: 40px;
-      justify-content: center;
-      display: flex;
-    }
-    
+	.centerplease {
+		margin: 0 auto;
+		font-size: 40px;
+		justify-content: center;
+		display: flex;
+	}
+	
     .question {
       position: relative;
       background: #468faf;
       color: white;
       margin: 0;
-      padding: 7px 7px 7px 50px;
+      padding: 10px 10px 10px 50px;
       display: block;
       width: 100%;
       cursor: pointer;
 	  border-radius: 4px;
+	  box-sizing: border-box;
     }
     
     .answers {
-      padding: 0px 12px;
-	  font-size: 14px;
-      margin: 5px 0;
+      padding: 10px 20px;
+	  font-size: 20px;
+      margin: 4px auto;
       max-height: 0;
       overflow: hidden;
       z-index: -1;
@@ -54,10 +56,11 @@
       -moz-transition: .7s ease;
       -o-transition: .7s ease;
       transition: .7s ease;
+	  text-align: justify;
     }
     
     .questions:checked~.answers {
-      max-height: 700px;
+      max-height: 9999px;
       opacity: 1;
       padding: 15px;
     }
@@ -100,31 +103,29 @@
       text-align: center;
     }
   
-	@media only screen and (max-width: 600px) {
-        .content {
-            width: 100%;
-            padding: 10px;
+	  @media only screen and (max-width: 600px) {
+            .content {
+                width: 100%;
+               padding: 10px;
+            }
+            .centerplease {
+                font-size: 15px;
+            }
+            .question {
+                padding: 7px 7px 7px 20px;
+            }
+            .plus {
+                font-size: 1.5em;
+            }
+            .answers {
+                padding: 0px 10px;
+				text-align: justify;
+            }
+            .question,
+            .answers {
+                text-align: left;
+            }
         }
-        .centerplease {
-            font-size: 15px;
-        }
-        .question {
-            padding: 7px 7px 7px 20px;
-        }
-        .plus {
-            font-size: 1.5em;
-        }
-        .answers {
-            padding: 0px 10px;
-        }
-        .break {
-            font-size: 1em;
-        }
-        .question,
-        .answers {
-            text-align: left; /* Adjust alignment */
-        }
-    }
   </style>
   
   <script>
@@ -188,7 +189,7 @@
 		<li>b. Reserved book can be borrowed for overnight use only.</li>
 		
 		 <p><b>2. Faculty members with non-permanent status may be allowed to borrow:</p></b> 
-		<li>a. Two circulation books for one semester.</li>
+<li>a. Two circulation books for one semester.</li>
 		<li>b. Reserved book can be borrowed for overnight use only.</li>
 		
 		 <p><b>3. Graduate students are allowed to borrow:</p></b>
