@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,25 +13,23 @@
             font-size: 1.5em;
             margin: 10;
             padding: 2px;
-	    align-items: center; /* Center the content vertically and horizontally */
-	    	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                	url('filres_lib.jpg') no-repeat center center; /* Gray overlay with background image */
-            background-size: cover; /* Scale the image to cover the entire background */
+            align-items: center;
+            
         }
 
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
-	    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-	    max-width: 1200px;
-	    margin: 20px auto;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
         }
 
         .image-container {
             flex: 1;
-			max-width: 20%;
+            max-width: 20%;
             padding: 10px;
             text-align: center;
         }
@@ -78,10 +75,7 @@
             z-index: -1;
             position: relative;
             opacity: 0;
-            -webkit-transition: .7s ease;
-            -moz-transition: .7s ease;
-            -o-transition: .7s ease;
-            transition: .7s ease;
+            transition: max-height 0.7s ease, opacity 0.3s ease;
             text-align: justify;
         }
 
@@ -97,22 +91,12 @@
             z-index: 5;
             font-size: 2em;
             line-height: 100%;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
             user-select: none;
-            -webkit-transition: .3s ease;
-            -moz-transition: .3s ease;
-            -o-transition: .3s ease;
             transition: .3s ease;
             color: white !important;
         }
 
         .questions:checked~.plus {
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
             transform: rotate(45deg);
         }
 
@@ -124,10 +108,10 @@
             color: blue;
             text-decoration: none;
             font-weight: normal;
-            font-size: 1 em;
+            font-size: 1em;
             display: block;
             text-align: center;
-            margin-top:20px;
+            margin-top: 20px;
         }
 
         @media only screen and (max-width: 600px) {
@@ -142,7 +126,7 @@
 
             .centerplease {
                 font-size: 40px;
-		text-align: center;
+                text-align: center;
             }
 
             .question {
@@ -164,26 +148,20 @@
                 text-align: left;
             }
 
-	    .image-container,
+            .image-container,
             .content {
                 max-width: 100%;
             }
-  
-	    .plus {
-		display: none;
-	    }
-      }
+
+            .plus {
+                display: none;
+            }
+        }
     </style>
-
-    <script>
-        window.console = window.console || function (t) {};
-    </script>
-
 </head>
-
 <body translate="no">
     <a href="index.html" class="home-link">
-        <img src="home.png" alt="Home" style="width: 40px; height: 40px;"> <!-- Adjust width and height as needed -->
+        <img src="home.png" alt="Home" style="width: 40px; height: 40px;">
     </a>
     <div class='centerplease'>Policy Concerning Book Borrowing and Fines</div>
     <br>
@@ -196,27 +174,17 @@
                 <input type="checkbox" id="question1" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question1" class="question">
-                    Rules in Borrowing Library Materials 
+                    Rules in Borrowing Library Materials
                 </label>
-
                 <div class="answers">
                     <p><b>1. Circulation Books</b></p>
-                    <p>1.1 <b>Graduate Students</b> are allowed to borrow books for one week and renew for another
-                        week unless there is prior request from another user.</p>
-                    <p>1.2 <b>Undergraduate Students</b> are allowed to borrow books for three days (Circulation) and
-                        renew for another three days unless there is prior request from another borrower.</p>
-
+                    <p>1.1 <b>Graduate Students</b> are allowed to borrow books for one week and renew for another week unless there is prior request from another user.</p>
+                    <p>1.2 <b>Undergraduate Students</b> are allowed to borrow books for three days (Circulation) and renew for another three days unless there is prior request from another borrower.</p>
                     <p><b>2. Reserved Books (RES)</b></p>
-                    Graduate and undergraduate students are allowed to borrow for one hour only within the library
-                    premises. Extension of hours may be granted unless there is prior request from another borrower.
-                    These books may be brought for photocopying purposes only.
-
+                    Graduate and undergraduate students are allowed to borrow for one hour only within the library premises. Extension of hours may be granted unless there is prior request from another borrower. These books may be brought for photocopying purposes only.
                     <p><b>3. Fiction books (FIC)</b></p>
-                    Graduate and undergraduate are allowed to borrow for one week and renew for another week unless
-                    there is prior request from another borrower.
-
-                    <p><b>4.</b> The following types of materials are to be read only inside the library. These
-                        materials are not to be circulated for home use:</p>
+                    Graduate and undergraduate are allowed to borrow for one week and renew for another week unless there is prior request from another borrower.
+                    <p><b>4.</b> The following types of materials are to be read only inside the library. These materials are not to be circulated for home use:</p>
                     <ul>
                         <li>a. Encyclopedias</li>
                         <li>b. Dictionaries</li>
@@ -235,38 +203,29 @@
                     </ul>
                 </div>
             </div>
-
             <div>
                 <input type="checkbox" id="question2" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question2" class="question">
-					Maximum Number of Books that May Be Borrowed at One Time
+                    Maximum Number of Books that May Be Borrowed at One Time
                 </label>
                 <div class="answers">
                     <p><b>1. Faculty members with permanent status are allowed to borrow:</p></b>
                     <p>a. A maximum of five circulation books for one semester on the subjects they teach.</p>
                     <p>b. Reserved book can be borrowed for overnight use only.</p>
-
                     <p><b>2. Faculty members with non-permanent status may be allowed to borrow:</p></b>
                     <p>a. Two circulation books for one semester.</p>
                     <p>b. Reserved book can be borrowed for overnight use only.</p>
-
                     <p><b>3. Graduate students are allowed to borrow:</p></b>
                     <p>a. Two (2) books at a time for one week and may be renewed for another week.</p>
-                    <p>b. Two (2) books of general circulation and one (1) reserved book to be read inside the
-                        library only, but never two (2) reserved books.</p>
-
+                    <p>b. Two (2) books of general circulation and one (1) reserved book to be read inside the library only, but never two (2) reserved books.</p>
                     <p><b>4. Undergraduate students are allowed to borrow:</p></b>
                     <p>a. Two (2) books at a time for three days and may be renewed for another three days.</p>
-                    <p>b. One (1) book from the general circulation and one reserved book to be read inside the
-                        library only but never two reserved books.</p>
-
+                    <p>b. One (1) book from the general circulation and one reserved book to be read inside the library only but never two reserved books.</p>
                     <p><b>5. Non-teaching staff are allowed to borrow:</p></b>
-                    <p>a. Two circulation books at a time for one week, which can be renewed for another week unless
-                        there is prior request from another borrower.</p>
+                    <p>a. Two circulation books at a time for one week, which can be renewed for another week unless there is prior request from another borrower.</p>
                 </div>
             </div>
-
             <div>
                 <input type="checkbox" id="question3" name="q" class="questions">
                 <div class="plus">+</div>
@@ -276,17 +235,11 @@
                 <div class="answers">
                     <b>For overdue books, the following fines are imposed:</b>
                     <p>a. <b>Circulation books:</b> P 1.00 a day, excluding Sundays and Holidays.</p>
-                    <p>b. <b>Reserved books:</b> P1.50 for the first hour or the fraction of the first hour: P 0.50
-                        for the second and succeeding hours; including overnight use, Saturday, Sundays and Holidays.
+                    <p>b. <b>Reserved books:</b> P1.50 for the first hour or the fraction of the first hour: P 0.50 for the second and succeeding hours; including overnight use, Saturday, Sundays and Holidays.</p>
                     <p>c. <b>Fiction books:</b> P0.50 a day excluding Sundays and Holidays.</p>
-                    <p>d. <b>Fines</b> must be paid to the librarian if the amount is less than P50.00. Fine collected
-                        will be remitted immediately to the cashiering office in the afternoon. Fines above Php 50.00
-                        will be collected directly to the Cashier’s Office. The Official Receipt issued should be
-                        presented to the library in-charge of the collection for recording. A payment order slip is
-                        issued to students as billing statement.</p>
+                    <p>d. <b>Fines</b> must be paid to the librarian if the amount is less than P50.00. Fine collected will be remitted immediately to the cashiering office in the afternoon. Fines above Php 50.00 will be collected directly to the Cashier’s Office. The Official Receipt issued should be presented to the library in-charge of the collection for recording. A payment order slip is issued to students as billing statement.</p>
                 </div>
             </div>
-
             <div>
                 <input type="checkbox" id="question4" name="q" class="questions">
                 <div class="plus">+</div>
@@ -294,17 +247,11 @@
                     Lost Books
                 </label>
                 <div class="answers">
-                   <p>
-		    When a book is lost, the borrower should immediately report the loss to the librarian. The library
-                    books and materials lost by the users shall be subjected to replacement cost, which shall include
-                    current cost if available plus 10% for the processing fee, or the cost of the photo duplication and
-                    binding if the lost item could no longer be found in the local market. (Excerpt from COA circular
-                    no. 94-012 dated September 13, 1994). However, if same title of the lost book is not available,
-                    he/she should replace it with another title but has a related topic from the one that was lost.
-		   </p>	   
+                    <p>
+                        When a book is lost, the borrower should immediately report the loss to the librarian. The library books and materials lost by the users shall be subjected to replacement cost, which shall include current cost if available plus 10% for the processing fee, or the cost of the photo duplication and binding if the lost item could no longer be found in the local market. (Excerpt from COA circular no. 94-012 dated September 13, 1994). However, if same title of the lost book is not available, he/she should replace it with another title but has a related topic from the one that was lost.
+                    </p>
                 </div>
             </div>
-
             <div>
                 <input type="checkbox" id="question5" name="q" class="questions">
                 <div class="plus">+</div>
@@ -312,13 +259,24 @@
                     Discipline
                 </label>
                 <div class="answers">
-                   <p>    
-		    Students who fail to observe library rules and regulations will be referred to the Director of
-                    Student Services for disciplinary actions.
-		   </p>
+                    <p>
+                        Students who fail to observe library rules and regulations will be referred to the Director of Student Services for disciplinary actions.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.questions').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                document.querySelectorAll('.questions').forEach((otherCheckbox) => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
