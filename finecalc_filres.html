@@ -9,6 +9,9 @@
         body {
             font-family: Arial, sans-serif;
             padding: 10px;
+	    background: linear-gradient(rgba(128, 128, 128, 0.7), rgba(128, 128, 128, 0.7)), 
+                      url('filres_lib.jpg') no-repeat center center; /* Gray overlay with background image */
+            background-size: cover; /* Scale the image to cover the entire background */
         }
 
         .container {
@@ -86,12 +89,12 @@
             display: none; /* Initially hidden */
         }
 
-		.footer {
+	.footer {
             position: fixed; /* Always stay at the bottom-right corner */
             bottom: 10px; /* 10px from the bottom */
             right: 10px; /* 10px from the right */
             font-size: 12px; /* Smaller font size */
-		}
+	    }
 
         /* Responsive Design */
         @media only screen and (max-width: 600px) {
