@@ -12,8 +12,12 @@
         body {
             font-family: 'Open Sans';
             font-size: 1.5em;
-            margin: 0;
-            padding: 0;
+            margin: 10;
+            padding: 2px;
+	    align-items: center; /* Center the content vertically and horizontally */
+	    	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                	url('filres_lib.jpg') no-repeat center center; /* Gray overlay with background image */
+            background-size: cover; /* Scale the image to cover the entire background */
         }
 
         .container {
@@ -28,7 +32,7 @@
 
         .image-container {
             flex: 1;
-	    max-width: 20%;
+			max-width: 20%;
             padding: 10px;
             text-align: center;
         }
