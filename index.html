@@ -11,98 +11,98 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center; /* Center the content vertically and horizontally */
+            align-items: center;
             background: linear-gradient(rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.8)), 
-                      url('ulrc.jpg') no-repeat center center; /* Gray overlay with background image */
-            background-size: cover; /* Scale the image to cover the entire background */
+                      url('ulrc.jpg') no-repeat center center;
+            background-size: cover;
         }
 
         .outer-container {
-            text-align: center; /* Center the welcome text */
-            padding-bottom: 10px; /* Space between welcome text and container */
+            text-align: center; 
+            padding-bottom: 10px;
         }
 
         .welcome-text {
-            color: White; /* White text color */
-            font-size: 1em; /* Smaller font size for the welcome text */
+            color: White;
+            font-size: 1em;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.8); /* Slightly transparent white box */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Drop shadow */
-            padding: 35px; /* Padding inside the box */
-            max-width: 500px; /* Limit the width */
-            text-align: center; /* Center content inside the container */
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            max-width: 500px;
+            text-align: center;
         }
 
         h1 {
-            color: #333; /* Dark text color */
-            font-size: 1.8em; /* Larger font size for the main title */
-            margin-bottom: 20px; /* Space below the main title */
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
 
         .button-container {
             display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            gap: 20px; /* Space between buttons */
+            flex-direction: column;
+            gap: 20px;
         }
 
         a.button {
-            text-decoration: none; /* No underline */
-            padding: 15px 30px; /* Padding for the buttons */
-            font-size: 1em; /* Standard font size */
-            color: white; /* White text */
-            border-radius: 5px; /* Rounded corners */
-            transition: background 0.3s; /* Transition effect for hover */
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
             border: none;
-            cursor: pointer; /* Cursor changes on hover */
+            cursor: pointer;
         }
 
         .blue-button {
-            background: #007bff; /* Blue button */
+            background: #007bff;
         }
 
         .blue-button:hover {
-            background: #0056b3; /* Darken on hover */
+            background: #0056b3;
         }
 
         .green-button {
-            background: #28a745; /* Green button */
+            background: #28a745;
         }
 
         .green-button:hover {
-            background: #218838; /* Darken on hover */
+            background: #218838;
         }
 
         .footer {
-            position: fixed; /* Always stay at the bottom-right corner */
-            bottom: 10px; /* 10px from the bottom */
-            right: 10px; /* 10px from the right */
-            font-size: 12px; /* Smaller font size */
-            color: White; /* White text color */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: White;
         }
     </style>
 </head>
 <body>
     <div class="outer-container">
-        <div class="welcome-text">Welcome to USeP-University Learning Resource Center!</div> <!-- Small white title -->
+        <div class="welcome-text">Welcome to USeP-University Learning Resource Center!</div>
         
         <div class="container"> <!-- White box with drop shadow -->
-            <img src="calculator.png" alt="Library Logo" width="100" height="100"> <!-- Image above the title -->
+            <img src="calculator.png" alt="Library Logo" width="100" height="100">
             <h1>Library FineFinder (LiFF)</h1> <!-- Main title -->
             
             <div class="button-container">
-                <a href="finecalc_filres.html" class="button blue-button">Filipiniana & Reserve</a> <!-- Blue button with anchor -->
-                <a href="finecalc_cirgrad.html" class="button green-button">Circulation & Fiction</a> <!-- Green button with anchor -->
+                <a href="finecalc_filres.html" class="button blue-button">Filipiniana & Reserve</a> 
+                <a href="finecalc_cirgrad.html" class="button green-button">Circulation & Fiction</a>
             </div>
         </div>
     </div>
 
-    <div class="footer">LiFF by akadoi ©2024.</div> <!-- Small text at the lower right -->
+    <div class="footer">LiFF by akadoi ©2024.</div>
 
     <script>
         if ('serviceWorker' in navigator) {
