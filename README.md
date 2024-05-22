@@ -13,3 +13,5 @@ LiFF is a user-friendly application built to assist both library staff and patro
 Easy Fine Calculation:__ Calculate fines based on overdue days and book type.
 
 User-Friendly Interface:__ Simple and intuitive interface for seamless interaction.
+
+**Note:** All icons, images, and resources use in this project belong to their rightful owner. 
