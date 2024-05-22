@@ -12,8 +12,8 @@
             padding: 10px;
             box-sizing: border-box;
 		background: linear-gradient(rgba(128, 128, 128, 0.7), rgba(128, 128, 128, 0.7)), 
-                	url('cirfic_lib.jpg') no-repeat center center; /* Gray overlay with background image */
-            background-size: cover; /* Scale the image to cover the entire background */
+                	url('cirfic_lib.jpg') no-repeat center center;
+            background-size: cover;
         }
 
         .calculator {
@@ -104,12 +104,12 @@
 	    text-align: justify;
         }
 
-		.footer {
-            position: fixed; /* Always stay at the bottom-right corner */
-            bottom: 10px; /* 10px from the bottom */
-            right: 10px; /* 10px from the right */
-            font-size: 12px; /* Smaller font size */
-		}
+	.footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+	}
 
         /* Responsive Styles */
         @media only screen and (max-width: 600px) {
@@ -181,7 +181,7 @@
         </form>
     </div>
 
-	<div class="footer"><a href="finecalc_policy.html">See Policy on Fines and Penalties</a></div> <!-- Small text at the lower right -->
+	<div class="footer"><a href="finecalc_policy.html">See Policy on Fines and Penalties</a></div>
 
     <script>
         function calculateFine() {
@@ -203,8 +203,8 @@
             let maxDays;
             let finePerDay;
 			
-			if (patronType === "undergraduate") {
-    if (bookType === "circulation") {
+   if (patronType === "undergraduate") {
+   if (bookType === "circulation") {
         maxDays = 3;
         finePerDay = 1.00;
     } else if (bookType === "fiction") {
