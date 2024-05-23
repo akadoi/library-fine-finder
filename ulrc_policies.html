@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy</title>
+    <link rel="icon" href="calculator.png" type="image/icon type">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
+
+        body {
+            font-family: 'Open Sans';
+            font-size: 1.5em;
+            margin: 10;
+            padding: 2px;
+            align-items: center;
+            
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 21.5%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            max-width: 70%;
+        }
+
+        .centerplease {
+            margin: 0 auto;
+            font-size: 40px;
+            justify-content: center;
+            display: flex;
+        }
+
+        .resolution-note {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .seemore {
+            text-align: center;
+            margin-top: 5px;
+            font-size: medium;
+        }
+        
+        .question {
+            position: relative;
+            background: #52b788;
+            color: white;
+            margin: 0px 0px -9px 0px;
+            padding: 6px 6px 6px 50px;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .answers {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: auto;
+            max-height: 0;
+            overflow: hidden;
+            z-index: -1;
+            position: relative;
+            opacity: 0;
+            transition: max-height 0.7s ease, opacity 0.3s ease;
+            text-align: justify;
+        }
+
+        .questions:checked~.answers {
+            max-height: 9999px;
+            opacity: 1;
+            padding: 15px;
+        }
+
+        .plus {
+            position: absolute;
+            margin-left: 10px;
+            z-index: 5;
+            font-size: 2em;
+            line-height: 100%;
+            user-select: none;
+            transition: .3s ease;
+            color: white !important;
+        }
+
+        .questions:checked~.plus {
+            transform: rotate(45deg);
+        }
+
+        .questions {
+            display: none;
+        }
+
+        .home-link {
+            color: blue;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 1em;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .content {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .centerplease {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .question {
+                padding: 7px 7px 7px 20px;
+                margin: 0px 0px 4px 0px;
+            }
+
+            .plus {
+                font-size: 1.5em;
+            }
+
+            .answers {
+                padding: 0px 10px;
+                text-align: justify;
+                margin: 4px auto;
+            }
+
+            .question,
+            .answers {
+                text-align: left;
+            }
+
+            .image-container,
+            .content {
+                max-width: 100%;
+            }
+
+            .plus {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body translate="no">
+    <a href="index.html" class="home-link">
+        <img src="home.png" alt="Home" style="width: 40px; height: 40px;">
+    </a>
+    <div class='centerplease'>Policies, Guidelines, Rules and Regulations of ULRC</div>
+    <div class="resolution-note">(Based on the Approved Library Manual | BOR Resolution No.29 S.2012)</div>
+    <div class="seemore"> <a href="finecalc_policy.html">⏎ Back to Fines and Penalties</a></div>
+    <br>
+    <div class="container">
+        <div class="image-container">
+            <img src="ulrc_bookmark.png" alt="Reading Image">
+        </div>
+        <div class="content">
+          
+            <div>
+                <input type="checkbox" id="question1" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question1" class="question">
+					General Rules
+                </label>
+                <div class="answers">
+                    <p>The following rules are set for the smooth supervision of the library.</p>
+                    
+                    <p><b>1.</b> Strictly observe SILENCE at all times. Mobile phones should be set in silent mode.</p>
+                    <p><b>2.</b> Eating, smoking and sleeping are not allowed in the library.</p>
+                    <p><b>3.</b> Books should be returned to their proper places after use.</p>
+                    <p><b>4.</b> Use of the library card.</p>
+                    Library card will be issued to freshmen and transferee students for free upon presentation of the Certificate of Registration (COR) and submission of 2 pcs, 1 x 1 recent pictures to be pasted in the library card and borrower’s card. However, the issuance of the library card for the CGBE students are voluntary since only those who will use the library will be charged in the amount of fifty (P50.00) for the library card. This card is non-transferable. The fee for the issuance of another card in case of lost is based on the fees presented in the Rationalized Tuition Fees and Other Fees.<br>
+                    <p><b>5.</b> Control Procedures.</p>
+                    <p> Attaché case, bags and big envelopes and folders must be left at the baggage counter. Upon leaving the library, every user is required to:<br>
+                    a. Show of the due slips for every library material that has been borrowed.<br>
+                    b. Give the due slip at the checking area.</p>
+				</div>
+            </div>
+
+
+			<div>
+                <input type="checkbox" id="question2" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question2" class="question">
+					Service Hours
+                </label>
+                <div class="answers">
+                    <p>The Learning Resource Center is open nine hours to 12 hours from Monday thru Saturdays, NO NOON BREAK. The bonafide graduate and undergraduate students are given privilege to enter the library as long as the library is open for service and may access and use library resources needed for student’s researches. However, visitors are allowed to enter provided they have certification from the librarian and will pay necessary fee as outsider. DACUN member institutions are free of charge as long as a certification from their librarian will be presented.</p>
+					<p><b>USeP-LRC Obrero Campus (Main Library)</b><br>
+                    7:30 A.M. to 6:00 P.M., Monday to Friday<br>
+                    7:30 A.M. to 5:00 P.M., Saturday</p>
+
+				    <p><b>College of Education LRC</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+                    <p><b>College of Business Administration LRC</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+					<p></p><b>College of Technology LRC</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+                    <p></p><b>Science and Techonology LRC</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Friday</p>
+				
+                    <p></p><b>School of Law Library</b><br>
+                    8:00 A.M. to 9:30 P.M., Monday to Friday<br>
+                    8:00 A.M. to 5:00 P.M., Saturday</p>
+
+                    <p></p><b>School of Medicine Library</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+                    <p></p><b>Tagum Campus Library</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+                    <p></p><b>Mabini Campus Library</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+
+                    <p></p><b>Mintal Campus Library</b><br>
+                    8:00 A.M. to 5:00 P.M., Monday to Saturday</p>
+				</div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question3" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question3" class="question">
+					Library Services
+                </label>
+                <div class="answers">
+                    <p><b>1. Book Borrowing Service</b>– A service by USeP libraries that allows library users to check out and take home books and other library items for a specified period of time.</p>
+                    <p><b>2. Library Orientation and Tours</b>– A service by USeP libraries to help new library users become familiar with the library's resources and services. This service typically includes a tour of the library facilities, an introduction to the library's collections, and a demonstration of how to use the library's catalog, databases, and other resources.</p>
+                    <p><b>3. Interlibrary Use</b>– Interlibrary Use (ILU) is a service extended to researchers by which a library user may use other libraries or refer library users to another library.</p>
+                    <p><b>4. Current Awareness</b>– A service by USeP libraries that helps library users stay informed about new and relevant information in their areas of interest. This service typically includes the provision of regular updates, alerts, and notifications about new books, journal articles, and other resources added to the library's collections.</p>
+                    <p><b>5. Indexing Service</b>– A service by USeP libraries that helps library users gain access to the contents of library resources through the use of keywords and subject headings, making it easier for patrons to locate and access relevant information.</p>
+                    <p><b>6. Thesis and Dissertation Assistance Service</b>- Assist library users who undergo research. This service provides assistance to researchers' Review of Related Literature (RRL), citation, plagiarism check, grammar check, and other references or software tools.</p>
+                    <p><b>7. Virtual Library Service</b>– USeP libraries provide computer units with access to the internet for study, research, and other educational purposes of the library users.</p>
+                    <p><b>8. Electronic Resources</b>– USeP libraries provide library users access to electronic resources such as CDs and DVDs for educational purposes.</p>
+                    <p><b>9. WiFi Connectivity</b>– USeP libraries provide library users access to wireless internet inside the library.</p>
+                    <p><b>10. Online Infomation Literacy Service (OILS)</b>– Covers online library information dissemination in applicable platforms and online orientation on the use of the library (its policies, guidelines, and processes), including e-resources (databases, research applications, e-books, e-journals, etc.) services available, and facilities.</p>
+                    <p><b>11. Document Delivery Services (DDS)</b>– Provided to library users to obtain information resources from the library through remote access, pick-up, and face-to-face delivery (for faculty members only) of both printed and non-print materials.</p>
+                    <p><b>12. Library Online Reference Services (LORS)</b>– Assists library users in finding answers to inquiries requiring specific information sources and materials through messenger chat or instant messaging and emails.</p>
+                    <p><b>13. Library Hotline Services (LHS)</b>– Provided to assist library users immediately on their queries, issues, and concerns. The following contact information is provided:</p>
+                        <p><b>Email Address:</b>       ulrcservices@usep.edu.ph & lrc@usep.edu.ph<br>
+                        <b>ULRC Landline:</b>       (082) 227-8192 local 246 or 247<br>
+                        <b>FB Page:</b>             USeP Learning Resource Center (@useplrc)</p>
+                    <p><b>14. Digital Library (Platform)- MyLOFT</b>– A platform used by the library that offers access to e-books, audiobooks, e-learning materials, magazines, videos, and other multimedia titles, all in one link.</p>
+				</div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question4" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question4" class="question">
+					Who May Use the Library?
+                </label>
+                <div class="answers">
+                    <p><b>The library may be used by:</b></p>
+                    <p><b>A.</b> The members of the University of Southeastern Philippines constitutes the following:</p>
+                    1. Members of the Administrative Council<br>
+                    2. Members of the Academic Council<br>
+                    3. Faculty<br>
+                    4. Non-teaching staff<br>
+                    5. Student</p>
+
+                    <p><b>B.</b> Members of the Davao Colleges and Universities’ Network (DACUN) can access to print collections free of charge but should follow to library’s existing policy.</p>
+                    <p><b>C.</b> Non-members of USEP community who may be allowed to use the library and who are expected to follow its rules and regulations and will pay necessary charges.</p>
+				</div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question5" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question5" class="question">
+					Issuance and Validation of Library Card
+                </label>
+                <div class="answers">
+                    <p><b>A. Requirements are set forth for the issuance of Library card for new officially enrolled students.</b></p>
+                    <p>1. Enrolment Form<br>
+                    2. Two (2) recent 1 x 1 ID picture (the background should be plain regardless of the color and the picture must be submitted in the same shots).</p>
+                    
+                    <p><b>B. Requirements are set forth for the issuance of Library card for new officially enrolled students.</b> </p>
+                    <p>1. Affidavit of loss (this can be secured either thru a private lawyer or from the government lawyer).<br>
+                    2. Two (2) recent 1 x 1 ID picture (the background should be plain regardless of the color and the picture must be submitted in the same shots).<br>
+                    3. Replacement fee of P30.00.</p>
+                    
+                    <p><b>C. Requirements for the Validation of Library Card (old students).</b></p>
+                    <p></p>1. Enrolment Form<br>
+                    2. Clearance<br>
+                    3. Official Receipt<br>
+                    4. 1 x 1 ID picture. ( same requirements of the above stated)</p>                 
+				</div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question6" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question6" class="question">
+					Policy Concerning the Signing of Clearance
+                </label>
+                <div class="answers">
+                    <p>The University Librarian schedules the signing of library clearance before the final examination time every semester including summer classes. This is per scheduled by USeP-LRC and approved by the Vice President for Academic Affairs. The signing of clearance is scheduled per college to orderly accommodate the student. The requirements are needed to complete the signing are the following: 1.) individual clearance form 2.) Library card with 1 x 1 attached ID picture as required.</p>
+                    
+                    <p>It should be known by the students that a sanction will be imposed for those students who late submit their clearance. The kind of sanction is given upon the discretion of the University Librarian.</p>
+                             
+                    <p>The schedule for the signing of clearance should be strictly followed since the library will conduct activities like the inventory of library books and other materials as well as the equipment, processing and cataloging of books, and distribution. The Commission On Audit (COA) strictly requires the library to submit the said documents before summer will end.</p>
+				</div>
+            </div>
+
+		   <div>
+                <input type="checkbox" id="question7" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question7" class="question">
+                    Rules in Borrowing Library Materials
+                </label>
+                <div class="answers">
+                    <p><b>1. Circulation Books</b></p>
+                    <p>1.1 <b>Graduate Students</b> are allowed to borrow books for one week and renew for another week unless there is prior request from another user.</p>
+                    <p>1.2 <b>Undergraduate Students</b> are allowed to borrow books for three days (Circulation) and renew for another three days unless there is prior request from another borrower.</p>
+                    <p><b>2. Reserved Books (RES)</b></p>
+                    Graduate and undergraduate students are allowed to borrow for one hour only within the library premises. Extension of hours may be granted unless there is prior request from another borrower. These books may be brought for photocopying purposes only.
+                    <p><b>3. Fiction books (FIC)</b></p>
+                    Graduate and undergraduate are allowed to borrow for one week and renew for another week unless there is prior request from another borrower.
+                    <p><b>4.</b> The following types of materials are to be read only inside the library. These materials are not to be circulated for home use:</p>
+                    <ul>
+                        <li>a. Encyclopedias</li>
+                        <li>b. Dictionaries</li>
+                        <li>c. Atlases</li>
+                        <li>d. Handbooks</li>
+                        <li>e. Reviewers</li>
+                        <li>f. Filipiniana Materials</li>
+                        <li>g. Theses</li>
+                        <li>h. Periodicals</li>
+                        <li>i. Rare pamphlets</li>
+                        <li>j. Duplicate of Periodical articles</li>
+                        <li>k. Manuals</li>
+                        <li>l. Dictionaries</li>
+                        <li>m. Yearbooks</li>
+                        <li>n. Almanacs</li>
+                    </ul>
+                </div>
+            </div>
+			
+            <div>
+                <input type="checkbox" id="question8" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question8" class="question">
+                    Maximum Number of Books that May Be Borrowed at One Time
+                </label>
+                <div class="answers">
+                    <p><b>1. Faculty members with permanent status are allowed to borrow:</b></p>
+                    <p>a. A maximum of five circulation books for one semester on the subjects they teach.<br>
+                    b. Reserved book can be borrowed for overnight use only.</p>
+                    <p><b>2. Faculty members with non-permanent status may be allowed to borrow:</b></p>
+                    <p>a. Two circulation books for one semester.</br>
+                    b. Reserved book can be borrowed for overnight use only.</p>
+                    <p><b>3. Graduate students are allowed to borrow:</b></p>
+                    <p>a. Two (2) books at a time for one week and may be renewed for another week.<br>
+                    b. Two (2) books of general circulation and one (1) reserved book to be read inside the library only, but never two (2) reserved books.</p>
+                    <p><b>4. Undergraduate students are allowed to borrow:</b></p>
+                    <p>a. Two (2) books at a time for three days and may be renewed for another three days.<br>
+                    b. One (1) book from the general circulation and one reserved book to be read inside the library only but never two reserved books.</p>
+                    <p><b>5. Non-teaching staff are allowed to borrow:</b></p>
+                    <p>a. Two circulation books at a time for one week, which can be renewed for another week unless there is prior request from another borrower.</p>
+                </div>
+            </div>
+			
+            <div>
+                <input type="checkbox" id="question9" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question9" class="question">
+                    Fines and Other Penalties for Students
+                </label>
+                <div class="answers">
+                    <b>For overdue books, the following fines are imposed:</b>
+                    <p>a. <b>Circulation books:</b> P 1.00 a day, excluding Sundays and Holidays.</p>
+                    <p>b. <b>Reserved books:</b> P1.50 for the first hour or the fraction of the first hour: P 0.50 for the second and succeeding hours; including overnight use, Saturday, Sundays and Holidays.</p>
+                    <p>c. <b>Fiction books:</b> P0.50 a day excluding Sundays and Holidays.</p>
+                    <p>d. <b>Fines</b> must be paid to the librarian if the amount is less than P50.00. Fine collected will be remitted immediately to the cashiering office in the afternoon. Fines above Php 50.00 will be collected directly to the Cashier’s Office. The Official Receipt issued should be presented to the library in-charge of the collection for recording. A payment order slip is issued to students as billing statement.</p>
+                </div>
+            </div>
+			
+            <div>
+                <input type="checkbox" id="question10" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question10" class="question">
+                    Lost Books
+                </label>
+                <div class="answers">
+                    <p>
+                        When a book is lost, the borrower should immediately report the loss to the librarian. The library books and materials lost by the users shall be subjected to replacement cost, which shall include current cost if available plus 10% for the processing fee, or the cost of the photo duplication and binding if the lost item could no longer be found in the local market. (Excerpt from COA circular no. 94-012 dated September 13, 1994). However, if same title of the lost book is not available, he/she should replace it with another title but has a related topic from the one that was lost.
+                    </p>
+                </div>
+            </div>
+			
+            <div>
+                <input type="checkbox" id="question11" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question11" class="question">
+                    Discipline
+                </label>
+                <div class="answers">
+                    <p>Students who fail to observe library rules and regulations will be referred to the Director of Student Services for disciplinary actions.</p>
+                </div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question12" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question12" class="question">
+                    Rules for Reservation
+                </label>
+                <div class="answers">
+                    <p><b>1.</b> Faculty members who want some materials to be reserved for their particular classes are requested to give a list or present the materials they have selected to be reserved on the separate shelves. Personally owned books may also be placed in the reserved section after they have been properly endorsed to the librarian.</p>
+                    <p><b>2.</b> Maximum number of books on reserved for a particular class shall be five circulation books.</p>
+                </div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question13" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question13" class="question">
+                    Policy on Outside Researchers
+                </label>
+                <div class="answers">
+                    <p><b>1.</b> Researchers from the other schools can avail of the USEP library collections after paying an amount of twenty-five-pesos (P50.00) per day as per Board Resolution #2437 s. 1995.</p>
+                    <p><b>2.</b> The outside researchers are not allowed to borrow library materials and should only use these library materials within the library premises.</p>
+                    <p><b>3.</b> They should follow the control procedures by leaving their bag, attaché case, envelopes at the baggage counter. They should submit for inspection before leaving the library.</p>
+                    <p><b>4.</b> The member institutions of the Davao Colleges and Universities’ Network (DACUN) are given privileges of free access to library resources.</p>
+                    <p><b>5.</b> Lastly, outside researchers are allowed to photocopy the materials after seeking permission from the librarian.</p>
+                </div>
+            </div>
+
+            <div>
+                <input type="checkbox" id="question14" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question14" class="question">
+                    Virtual Library
+                </label>
+                <div class="answers">
+                    <p>Virtual library is an area to access information in worldwide web through internet networks, and other electronic information.</p>
+                    <p><b>1.</b> The Virtual library services are available to bonafide students of the University of Southeastern Philippines faculty members, staff, and students.<br></p>
+                    <p><b>2.</b> In case of consumed prepaid account, the clientele can avail by paying the amount as stipulated below ( Resolution no. 40042 c. 2001):</p>
+                    <p>Php 20.00 - walk-in user (90 mins)<br>
+                    Php 50.00 - to use for 3 hours<br>
+                    Php 100.00 - to use for 7 hours<br>
+                    Php 250.00 - to use for 18 hours</p>
+                    <p><b>3.</b> Printing jobs as provided are the following:</p>
+                    <p>Php 3.00 per page, black and white, Coupon Bond not provided<br>
+                    Php 4.00 per page, black and white, Coupon Bond provided<br>
+                    Php 8.00 per page, colored printing</p>
+                    <p><b>4.</b> One (unit of computer per client is allowed.</p>
+                    <p><b>5.</b> Removable disks should be well inspected before use.</p>
+                    <p><b>6.</b> Accessing to pornographic site, social network, and games are strictly prohibited.</p>
+                    <p><b>7.</b> Vandalism is strictly prohibited.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.questions').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                document.querySelectorAll('.questions').forEach((otherCheckbox) => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
