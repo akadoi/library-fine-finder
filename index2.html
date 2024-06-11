@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDC Guide</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Change height to min-height */
+            position: relative; /* Add relative positioning for .home-icon */
+        }
+
+        .content {
+            max-width: 1200px;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Change to column for mobile */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section, .right-section {
+            width: 100%; /* Full width for both sections */
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .left-section h1 {
+            color: #b21f24;
+            font-size: 1.7em;
+            margin-bottom: 10px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .left-section h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .left-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: left;
+        }
+
+        .left-section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .left-section ul li {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .left-section ul li::before {
+            content: '✔️';
+            color: #28a745;
+            margin-right: 10px;
+        }
+
+        .left-section a {
+            text-decoration: none;
+        }
+
+        .left-section button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1.5em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block; /* Change display property to block */
+            margin: 0 auto; /* Center the button */
+        }
+
+        .left-section button:hover {
+            background-color: #218838;
+        }
+
+        .right-section .image-container {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .home-icon {
+            position: absolute;
+            top: 10px; /* Adjust the top value as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+            }
+
+            .left-section, .right-section {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="home-icon">
+        <img src="home.png" alt="Home" style="width: 40px; height: 40px;">
+    </a>
+
+    <div class="content">
+        <div class="left-section">
+            <h1>Hi! This is a Simple Book Cataloging Guide.</h1>
+            <h2>Dewey Decimal Classification</h2>
+            <p>This is a simple guide to help you understand how to catalog library materials using the Dewey Decimal Classification system.</p>
+            <ul>
+                <li>Learn about the Dewey Decimal Classification.</li>
+                <li>Understand how to classify library materials.</li>
+            </ul>
+            <a href="ddc.html"><button>Get Started</button></a>
+        </div>
+        <div class="right-section">
+            <div class="image-container">
+                <img src="searching.png" alt="Searching">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

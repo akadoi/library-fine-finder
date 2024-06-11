@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewey Decimal Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f2f2f2;
+            position: relative; /* added */
+        }
+
+        .home-icon {
+            position: fixed;
+            top: 10px; /* Adjust the top value as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .container {
+            width: calc(30% - 20px);
+            margin: 10px 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-container {
+            background-color: lightgreen;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .home-icon {
+            position: absolute;
+            top: 10px; /* Adjust the top value as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 44px;
+            margin-top: 60px; /* Adjust the margin-top value to add space between icon and heading */
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            text-align: center;
+            color: rgb(0, 85, 35);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: left;
+            font-family: Arial;
+        }
+
+        .guidelines {
+            width: calc(90% - 20px);
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            font-size: 1.5em;
+        }
+
+        .guidelines li {
+            font-family: Arial;
+            font-size: 16px;
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: calc(50% - 20px);
+            }
+
+            .guidelines {
+                width: calc(100% - 20px);
+                margin: 20px 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: calc(100% - 20px);
+                margin: 10px 0;
+            }
+
+            .guidelines {
+                width: calc(100% - 20px);
+                margin: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="home-icon">
+        <img src="home.png" alt="Home" style="width: 40px; height: 40px;">
+    </a>
+    <h1><a href="index2.html" style="color: blue; text-decoration: none;">Dewey Decimal Classification</a></h1>
+
+    <div class="guidelines">
+      <h2>General Guidelines</h2>
+
+        <ul>
+            <li>✔ Cataloguing can't be learned in a day.</li>
+            <li>✔ Dewey is not a perfect system; not all books fit neatly into a single number.</li>
+            <li>✔ Some books can legitimately be catalogued in several numbers; choose the one most appropriate to the curriculum and the conditions in your institution.</li>
+            <li>✔ Always put a book in a number where it will get maximum usage; move excellent books if they don't seem to be used.</li>
+            <li>✔ Bend the rules to suit local needs.</li>
+            <li>✔ Avoid censorship: put literature in the 800s.</li>
+            <li>✔ Catalog biographies into subject areas. ie. a biography of Tiger Woods should be in golf, not biography.</li>
+            <li>✔ There are standard subdivisions that can be added to almost any number:
+                <ul>
+                    <li>.03 = dictionaries, encyclopedias. ie. 503 for a dictionary of science; 610.3 dictionary of medical terms</li>
+                    <li>.09 = history and criticism. ie. 809 = criticism of literature; 385.09 for a history of railways</li>
+                    <li>.07 = education; ie. 507 = studying science; 622.07 = the study of mining</li>
+                </ul>
+            </li>
+            <li>✔ Place numbers can be added where appropriate:
+                <ul>
+                    <li>.71 = Canada; ie. 385.0971 Canadian railways;</li>
+                    <li>.73 = US; ie. 330.973 American economics</li>
+                </ul>
+            </li>
+            <li>✔ Country codes are already present in the 900s. e.g., 971 means Canadian history; 917.3 means American geography</li>
+            <li>✔ Begin by estimating the Dewey number. Then check the Dewey index. Never assign a number without looking up the actual number in the schedules.</li>
+        </ul>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_000.html"> 000 Generalities</a></h2>
+      </div>
+      <p>
+        010 Bibliography <br />
+        020 Library &amp; information sciences <br />
+        030 General encyclopedic works <br />
+        040 <font color="#C00000">Unassigned</font> <br />
+        050 General serials &amp; their indexes <br />
+        060 General organizations &amp; museology <br />
+        070 News media, journalism, publishing <br />
+        080 General collections&nbsp; <br />
+        090 Manuscripts &amp; rare books
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_100.html"> 100 Philosophy & Psychology</a></h2>
+      </div>
+      <p>
+        110 Metaphysics <br />
+        120 Epistemology, causation, humankind <br />
+        130 Paranormal phenomena, occult <br />
+        140 Specific philosophical schools <br />
+        150Psychology <br />
+        160 Logic <br />
+        170 Ethics (moral philosophy) <br />
+        180 Ancient, medieval, Oriental philosophy <br />
+        190 Modern Western philosophy
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_200.html"> 200 Religion</a></h2>
+      </div>
+      <p>
+        210 Natural theology <br />
+        220 Bible <br />
+        230 Christian theology <br />
+        240 Christian moral&amp; devotional theology <br />
+        250 Christian orders &amp; localchurch&nbsp; <br />
+        260 Christian social theology <br />
+        270 Christian church history <br />
+        280 Christian denominations &amp; sects <br />
+        290 Other &amp; comparative religion
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_300.html"> 300 Social Sciences</a></h2>
+      </div>
+      <p>
+        310 General statistics <br />
+        320 Political science <br />
+        330 Economics <br />
+        340 Law <br />
+        350 Public administration <br />
+        360 Social services; associations <br />
+        370 Education <br />
+        380 Commerce, communications, transport <br />
+        390 Customs, etiquette, folklore
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_400.html"> 400 Language</a></h2>
+      </div>
+      <p>
+        410 Linguistics <br />
+        420 English &amp; Old English <br />
+        430 Germanic languages German <br />
+        440 Romance languages French <br />
+        450 Italian, Romanian languages <br />
+        460 Spanish &amp; Portuguese languages <br />
+        470 ltalic languages, Latin <br />
+        480 Hellenic languages, Classical Greek <br />
+        490 Other languages
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_500.html"> 500 Natural Sciences & Mathematics</a></h2>
+      </div>
+      <p>
+        510 Mathematics <br />
+        520 Astronomy &amp; allied sciences <br />
+        530 Physics <br />
+        540 Chemistry &amp; allied sciences <br />
+        550 Earth sciences <br />
+        560 Paleontology, paleozoology <br />
+        570 Life sciences <br />
+        580 Botanical sciences <br />
+        590 Zoological sciences
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_600.html"> 600 Technology (Applied Sciences)</a></h2>
+      </div>
+      <p>
+        610 Medical sciences and medicine <br />
+        620 Engineering &amp; allied operations <br />630
+        Agriculture&nbsp; br />
+        640 Home economics &amp; family living&nbsp; <br />
+        650 Management &amp; auxiliary services <br />
+        660 Chemical engineering <br />
+        670 Manufacturing <br />
+        680 Manufacture for specific uses <br />
+        690 Buildings
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_700.html"> 700 The Arts</a></h2>
+      </div>
+      <p>
+        710 Civic &amp; landscape art <br />
+        720 Architecture <br />
+        730 Plastic arts, sculpture <br />
+        740 Drawing &amp; decorative arts <br />
+        750 Painting &amp; paintings (museums) <br />
+        760 Graphic arts, printmaking &amp; prints, postage stamps <br />
+        770 Photography &amp; photographs <br />
+        780 Music&nbsp; <br />
+        790 Recreational &amp; performing arts
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_800.html"> 800 Literature & Rhetoric</a></h2>
+      </div>
+      <p>
+        810 American literature <br />
+        820 English &amp; Old English literatures <br />
+        830 Literatures of Germanic languages <br />
+        840 Literatures of Romance languages <br />
+        850 Italian, Romanian literatures <br />
+        860 Spanish &amp; Portuguese literatures <br />
+        870 Italic literatures, Latin <br />
+        880 Hellenic literatures, Classical Greek <br />
+        890 Literatures of other languages
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_900.html"> 900 Geography & History</a></h2>
+      </div>
+      <p>
+        910 Geography and travel <br />
+        920 Biography, genealogy, insignia <br />
+        930 History of the ancient world <br />
+        940 General history of Europe <br />
+        950 Generalhistory of Asia, Far East <br />
+        960 General history of Africa <br />
+        970 General history of North America <br />
+        980 General history of South America <br />
+        990 General history of other areas
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2><a href="ddc_1k.html">DDC 1000 Subdivision</a></h2>
+      </div>
+      <p><a href="ddc_1k.html">DDC 1000 Subdivision</a></p>
+    </div>
+
+    <div class="container">
+      <div class="title-container">
+        <h2>...</h2>
+      </div>
+      <p>...</p>
+    </div>
+  </body>
+</html>
