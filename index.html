@@ -26,18 +26,11 @@
         }
 
         .welcome-text {
-            color: white;
+            color: White;
             font-size: 1.5em;
             margin-bottom: 20px; /* Add margin at the bottom */
             text-align: center; /* Center text alignment */
             max-width: 90%; /* Limit the width to ensure centering */
-        }
-
-        .container-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 700px;
         }
 
         .container {
@@ -45,14 +38,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 35px;
+            max-width: 300px;
             text-align: center;
             margin-bottom: 20px;
-            flex: 1; /* Make containers take equal space */
-            margin-right: 20px; /* Add margin between the containers */
-        }
-
-        .container:last-child {
-            margin-right: 0; /* Remove margin from the last container */
         }
 
         h1 {
@@ -100,7 +88,18 @@
             bottom: 10px;
             right: 10px;
             font-size: 12px;
-            color: white;
+            color: White;
+        }
+
+        /* Additional Styles */
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .container-wrapper .container {
+            margin-right: 20px; /* Add margin between the containers */
         }
 
         @media (max-width: 768px) {
@@ -108,10 +107,8 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .container {
+            .container-wrapper .container {
                 margin-right: 0; /* Reset margin for smaller screens */
-                margin-bottom: 60px; /* Increase margin at the bottom for smaller screens */
-                max-width: 90%; /* Ensure full width on smaller screens */
             }
             h1 {
                 text-align: center; /* Center text alignment on smaller screens */
